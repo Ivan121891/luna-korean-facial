@@ -125,7 +125,7 @@
     const cursor = new Date(today);
     while (cells.length < 6) {
       const dow = cursor.getDay();
-      if (dow !== 0 && dow !== 6) {
+      if (dow !== 6) {
         cells.push(new Date(cursor));
       }
       cursor.setDate(cursor.getDate() + 1);
