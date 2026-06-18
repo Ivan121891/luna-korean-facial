@@ -1,123 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Studio Luna — Korean Facial</title>
-  <meta name="description" content="Book your Korean Facial appointment at Studio Luna in Daly City">
-  <meta name="theme-color" content="#A07A5C">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23A07A5C'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-family='system-ui' font-size='18' fill='%23FFF8F0' font-weight='600' dominant-baseline='middle'%3ESL%3C/text%3E%3C/svg%3E">
-  <link rel="preload" as="image" href="images/treatment-hero.jpg">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="theme-color" content="#A07A5C"/>
+<title>Studio Luna — Korean Facial</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23A07A5C'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-family='system-ui' font-size='18' fill='%23FFF8F0' font-weight='600' dominant-baseline='middle'%3ESL%3C/text%3E%3C/svg%3E"/>
+<link rel="preload" as="image" href="images/treatment-hero.jpg"/>
+<!-- Meta Pixel (shared + Studio Luna dedicated) -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1178133073434960');
+  fbq('init', '1541798407303624');
+  fbq('trackSingle', '1178133073434960', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1178133073434960&ev=PageView&noscript=1" alt="" /></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1541798407303624&ev=PageView&noscript=1" alt="" /></noscript>
+<style>
+  :root{
+    --mocha:#A07A5C; --espresso:#3D2D22; --espresso2:#5C4435;
+    --cream:#FBF6F0; --cream2:#F4EADF; --taupe:#E5D8C9; --taupe-soft:#EFE5D9;
+    --gold:#C9A24B; --gold-lt:#E6C871; --gold-dk:#B8862F; --ink-soft:#7A6A5A;
+    --ov1:#3a2a20; --ov2:#241810; --ov3:#180f08;
+    --hero-a:#C9B29B; --hero-b:#A07A5C; --hero-c:#7A5B43;
+    --btn-a:#B98A66; --btn-b:#8C6647;
+    --conf1:#E6C871; --conf2:#B98A66; --conf3:#8FA88B; --conf4:#C9A24B; --conf5:#F0D689; --conf6:#E9C6B7;
+    --cta:#D4F500; --cta-2:#A8D400; --cta-text:#21300A; --cta-glow:rgba(168,212,0,.55);
+  }
 
-  <!-- Meta Pixel -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1178133073434960');
-    fbq('init', '1541798407303624');
-    fbq('trackSingle', '1178133073434960', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1178133073434960&ev=PageView&noscript=1" alt="" /></noscript>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1541798407303624&ev=PageView&noscript=1" alt="" /></noscript>
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;background:#15110c;min-height:100%;overflow-x:hidden;}
+  body{display:flex;flex-direction:column;align-items:center;font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;}
+  /* ===== responsive: every screen = exactly one viewport, centered, no scroll ===== */
+  #stage{width:100%;display:flex;justify-content:center;}
+  @media (min-width:561px){ #stage{padding:16px;} }
+  @media (max-width:560px){
+    html,body{height:100%;height:100dvh;overflow:hidden;}
+    #stage{min-height:100svh;min-height:100dvh;padding:0;}
+    #page{max-width:100%!important;width:100vw!important;border-radius:0!important;
+          height:100svh;height:100dvh;overflow:hidden;display:flex;flex-direction:column;}
+    #hero{flex:0 0 auto;height:clamp(150px,22dvh,168px)!important;}
+    #funnel{flex:1 1 auto;min-height:0;overflow:hidden;display:flex;flex-direction:column;
+            justify-content:center;padding:clamp(12px,2.4dvh,22px) clamp(14px,5vw,20px);}
+    .step h1{font-size:clamp(19px,5.6vw,22px)!important;}
+    #dateGrid .chip,#timeGrid .chip{padding:clamp(10px,1.6dvh,13px) 8px;}
+  }
+  /* ===== thank-you (done) view: drop hero header, compact, fit one viewport ===== */
+  body.thanks #hero, body.thanks #prizeBanner{display:none!important;}
+  body.thanks #funnel > div:first-child{display:none!important;} /* progress dots */
+  @media (max-width:560px){
+    body.thanks #funnel{justify-content:center;padding:clamp(10px,2dvh,18px) 16px;}
+  }
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+  @keyframes bob{0%,100%{transform:translateX(0)}50%{transform:translateX(-6px)}}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @keyframes fadeUp{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:translateY(0)}}
+  .chip{border:1.5px solid var(--taupe);background:#fff;color:var(--espresso);border-radius:13px;padding:13px 8px;font-size:14px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s;font-family:inherit;}
+  .chip:active{transform:scale(.97);}.chip:hover{border-color:var(--mocha);}
+  .chip.sel{background:var(--mocha);border-color:var(--mocha);color:#fff;box-shadow:0 6px 16px -6px color-mix(in srgb,var(--mocha) 70%,transparent);}
+  input.fld{width:100%;border-radius:12px;padding:13px 15px;font-size:16px;outline:none;background:#fff;border:1.5px solid var(--taupe);color:var(--espresso);font-family:inherit;}
+  input.fld:focus{border-color:var(--mocha);}
+  .lbl{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--ink-soft);margin:0 0 5px 2px;text-transform:uppercase;}
+</style>
 </head>
-<body>
-  <div class="page">
-    <div class="card" id="card">
-      <!-- Hero image -->
-      <div class="hero">
-        <img src="images/treatment-hero.jpg" alt="Korean Facial treatment at Studio Luna">
+<body data-theme="mocha" data-cta="lime">
+
+<div id="stage">
+<div id="page" style="position:relative;width:100%;max-width:430px;background:var(--cream);border-radius:22px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.7);">
+
+  <!-- ===== IMAGE HEADER (promotion header — untouched, no face) ===== -->
+  <div id="hero" style="position:relative;height:230px;overflow:hidden;background:linear-gradient(135deg,var(--hero-a),var(--hero-b) 60%,var(--hero-c));">
+    <img id="heroImg" alt="" src="images/treatment-hero.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;" onload="this.style.display='block'" onerror="this.remove()"/>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,.5));"></div>
+    <div style="position:absolute;top:14px;left:18px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:26px;height:26px;border-radius:7px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:700;color:var(--mocha);font-size:15px;">L</div>
+        <span style="color:#fff;font-family:Georgia,serif;font-size:15px;font-weight:600;text-shadow:0 2px 6px rgba(0,0,0,.5);">Studio Luna</span>
       </div>
-
-      <!-- STEP 1: Date selection -->
-      <section class="content" id="step-date">
-        <h1 class="title">Choose date and time for your <span class="accent">Korean Facial</span> appointment</h1>
-
-        <div class="section">
-          <h2 class="section-title">Date</h2>
-          <div class="date-grid" id="date-grid"></div>
-        </div>
-
-        <p class="address">6371 Mission St<br>Daly City, CA 94014</p>
-      </section>
-
-      <!-- STEP 2: Time selection -->
-      <section class="content hidden" id="step-time">
-        <button type="button" class="back-btn" data-back="date">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
-          Back
-        </button>
-        <h1 class="title">Select your preferred time</h1>
-        <p class="subtitle" id="time-summary"></p>
-
-        <div class="time-block">
-          <p class="time-label">Morning</p>
-          <div class="time-grid" id="morning-grid"></div>
-        </div>
-
-        <div class="time-block">
-          <p class="time-label">Afternoon</p>
-          <div class="time-grid" id="afternoon-grid"></div>
-        </div>
-      </section>
-
-      <!-- STEP 3: Customer details form -->
-      <section class="content hidden" id="step-details">
-        <button type="button" class="back-btn" data-back="time">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
-          Back
-        </button>
-        <h1 class="title">Enter your details</h1>
-        <p class="subtitle" id="details-summary"></p>
-
-        <form id="details-form" class="form" autocomplete="on" novalidate>
-          <label class="field">
-            <span class="field-label">Name</span>
-            <input type="text" name="name" id="name" placeholder="Full name" autocomplete="name" required>
-          </label>
-          <label class="field">
-            <span class="field-label">Email</span>
-            <input type="email" name="email" id="email" placeholder="name@example.com" autocomplete="email" required>
-          </label>
-          <label class="field">
-            <span class="field-label">Phone</span>
-            <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890" autocomplete="tel" required>
-          </label>
-
-          <button type="submit" class="primary-btn" id="submit-btn">
-            <span class="btn-label">Schedule Appointment</span>
-            <span class="spinner hidden" aria-hidden="true"></span>
-          </button>
-          <p class="error-text hidden" id="error-text">Failed to book appointment</p>
-        </form>
-      </section>
-
-      <!-- STEP 4: Confirmation -->
-      <section class="content hidden confirmation" id="step-confirmed">
-        <div class="check-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
-        </div>
-        <h1 class="title center">Appointment Requested!</h1>
-        <p class="subtitle center">You will receive a confirmation shortly.</p>
-
-        <div class="confirm-card" id="confirm-card"></div>
-
-        <a class="primary-btn" id="gcal-link" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg>
-          Add to Google Calendar
-        </a>
-        <button type="button" class="secondary-btn" id="reset-btn">Book Another Appointment</button>
-      </section>
+      <div style="background:rgba(255,255,255,.92);color:var(--mocha);font-size:10px;font-weight:700;letter-spacing:.14em;padding:3px 10px;border-radius:9999px;">KOREAN FACIAL</div>
+    </div>
+    <div style="position:absolute;left:18px;bottom:16px;max-width:64%;">
+      <div style="color:#fff;font-family:Georgia,serif;font-size:23px;font-weight:600;text-shadow:0 2px 10px rgba(0,0,0,.6);line-height:1.08;">Glow starts<br>in Daly City</div>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <div id="prizeBanner" style="display:none;align-items:center;gap:10px;padding:11px 14px;background:linear-gradient(90deg,var(--espresso),var(--espresso2));border-bottom:2px solid var(--gold);">
+    <span style="font-size:20px;">🎁</span>
+    <div style="flex:1;text-align:left;line-height:1.25;">
+      <div id="bannerPrize" style="color:#fff;font-size:12.5px;font-weight:700;"></div>
+      <div style="color:var(--gold-lt);font-size:10.5px;font-family:ui-monospace,monospace;letter-spacing:1px;">Code: <span id="bannerCode"></span> · applied at booking</div>
+    </div>
+  </div>
+
+  <!-- ===== BOOKING FUNNEL ===== -->
+  <div id="funnel" style="padding:22px 20px 26px;">
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:18px;">
+      <div class="pdot" data-s="1" style="flex:1;height:4px;border-radius:9999px;background:var(--mocha);"></div>
+      <div class="pdot" data-s="2" style="flex:1;height:4px;border-radius:9999px;background:var(--taupe);"></div>
+      <div class="pdot" data-s="3" style="flex:1;height:4px;border-radius:9999px;background:var(--taupe);"></div>
+    </div>
+    <div id="step1" class="step">
+      <h1 style="font-family:Georgia,serif;color:var(--espresso);font-size:22px;line-height:1.2;margin:0 0 4px;">Choose a date for your Korean Facial</h1>
+      <p style="font-size:12.5px;color:var(--ink-soft);margin:0 0 16px;line-height:1.5;">6371 Mission St<br>Daly City, CA 94014</p>
+      <p class="lbl">Date</p>
+      <div id="dateGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;"></div>
+    </div>
+    <div id="step2" class="step" style="display:none;">
+      <h1 style="font-family:Georgia,serif;color:var(--espresso);font-size:22px;line-height:1.2;margin:0 0 16px;">Select your preferred time</h1>
+      <p class="lbl">Available times</p>
+      <div id="timeGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;"></div>
+      <button class="backBtn" data-to="1" style="margin-top:18px;background:none;border:none;color:var(--ink-soft);font-size:13px;cursor:pointer;font-family:inherit;">‹ Back</button>
+    </div>
+    <div id="step3" class="step" style="display:none;">
+      <h1 style="font-family:Georgia,serif;color:var(--espresso);font-size:22px;line-height:1.2;margin:0 0 16px;">Enter your details</h1>
+      <div style="margin-bottom:11px;"><p class="lbl">Name</p><input id="d-name" class="fld" placeholder="Your name"/></div>
+      <div style="margin-bottom:11px;"><p class="lbl">Email</p><input id="d-email" class="fld" type="email" placeholder="you@email.com"/></div>
+      <div><p class="lbl">Phone</p><input id="d-phone" class="fld" type="tel" placeholder="(555) 000-0000"/></div>
+      <p id="d-err" style="font-size:12px;margin:7px 0 0;color:#B23A48;display:none;">Please complete all fields with a valid email.</p>
+      <div id="d-prizeRow" style="display:none;align-items:center;gap:8px;margin-top:14px;padding:10px 12px;background:var(--taupe-soft);border:1px dashed var(--mocha);border-radius:12px;">
+        <span style="font-size:16px;">🎁</span><span style="font-size:12px;color:var(--espresso2);font-weight:600;flex:1;text-align:left;" id="d-prizeText"></span>
+      </div>
+      <button id="scheduleBtn" style="width:100%;margin-top:18px;border-radius:9999px;padding:16px 0;font-size:16px;font-weight:800;border:none;cursor:pointer;background:linear-gradient(150deg,var(--cta),var(--cta-2));color:var(--cta-text);font-family:Georgia,serif;box-shadow:0 12px 32px -8px var(--cta-glow),inset 0 1px 0 rgba(255,255,255,.4);">Schedule Appointment</button>
+      <p style="font-size:10px;color:var(--ink-soft);line-height:1.5;margin:10px 2px 0;">By scheduling, you agree to receive appointment &amp; offer texts. Msg &amp; data rates may apply. Reply STOP to opt out.</p>
+      <button class="backBtn" data-to="2" style="margin-top:12px;width:100%;background:none;border:none;color:var(--ink-soft);font-size:13px;cursor:pointer;font-family:inherit;">‹ Back</button>
+    </div>
+    <div id="done" class="step" style="display:none;text-align:center;padding:0;">
+      <div id="doneHost" style="width:clamp(58px,15vw,80px);height:clamp(58px,15vw,80px);margin:0 auto clamp(4px,1dvh,8px);border-radius:50%;overflow:hidden;border:3px solid var(--gold-lt);box-shadow:0 8px 20px -8px rgba(0,0,0,.4);"></div>
+      <h1 style="font-family:Georgia,serif;color:var(--espresso);font-size:clamp(20px,5.6vw,23px);margin:0 0 3px;">You're booked!</h1>
+      <p id="doneMsg" style="font-size:clamp(12px,3.4vw,13px);color:var(--ink-soft);line-height:1.45;margin:0 0 clamp(8px,1.8dvh,16px);"></p>
+      <div style="background:linear-gradient(170deg,var(--cream2),#fff);border:1px solid var(--taupe);border-radius:16px;padding:clamp(11px,2dvh,16px) 16px;margin-bottom:clamp(9px,1.8dvh,14px);box-shadow:0 8px 24px -12px rgba(0,0,0,.25);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--mocha);margin-bottom:clamp(6px,1.2dvh,10px);">YOUR GIFT ON THIS VISIT</div>
+        <img id="donePrizeImg" alt="" style="display:none;margin:0 auto clamp(8px,1.6dvh,12px);max-height:34dvh;width:auto;max-width:80%;object-fit:contain;border-radius:14px;box-shadow:0 10px 24px -10px rgba(0,0,0,.45);"/>
+        <div id="donePrizeIcon" style="width:clamp(56px,14vw,76px);height:clamp(56px,14vw,76px);margin:0 auto clamp(7px,1.4dvh,12px);border-radius:50%;display:none;align-items:center;justify-content:center;box-shadow:0 8px 20px -8px rgba(0,0,0,.4);"></div>
+        <div style="display:inline-block;background:var(--espresso);border-radius:9999px;padding:6px 14px;"><span style="font-family:ui-monospace,monospace;color:var(--gold-lt);font-size:13px;font-weight:700;letter-spacing:2px;" id="donePrizeCode"></span></div>
+      </div>
+      <div style="text-align:left;background:#0E2A26;border-radius:14px;padding:clamp(11px,2dvh,16px);margin-bottom:clamp(8px,1.6dvh,14px);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(5px,1.2dvh,8px);"><span style="font-size:18px;">💬</span><span style="color:#fff;font-weight:700;font-size:clamp(13px,3.6vw,14px);">Check your texts — I just messaged you</span></div>
+        <p style="color:#Bfe3da;font-size:clamp(11.5px,3.2vw,12.5px);line-height:1.45;margin:0 0 clamp(8px,1.6dvh,12px);">I sent your prize code to your phone. Reply <b style="color:#7CF3C7;">YES</b> and I'll personally confirm your appointment and your gift. Can't wait to see you! ✦ — Mia</p>
+        <div style="background:#13352F;border-radius:12px;padding:9px 11px;">
+          <div style="background:#25433D;border-radius:10px 10px 10px 3px;padding:8px 11px;margin-bottom:7px;"><span style="color:#E8F5F1;font-size:clamp(11px,3vw,11.5px);line-height:1.4;">🎁 Studio Luna: You won <b id="smsPrize"></b>! Code <b id="smsCode"></b>. Reply <b>YES</b> and our specialist will contact you to lock in your visit.</span></div>
+          <div style="display:flex;justify-content:flex-end;"><div style="background:#7CF3C7;border-radius:10px 10px 3px 10px;padding:6px 16px;"><span style="color:#06241D;font-size:13px;font-weight:700;">YES</span></div></div>
+        </div>
+      </div>
+      <p style="font-size:10.5px;color:var(--ink-soft);line-height:1.4;margin:0;">A specialist typically replies within minutes during business hours. Standard message rates may apply.</p>
+    </div>
+  </div>
+
+  <!-- ===== ENTRY OVERLAY ===== -->
+  <div id="ov" style="position:absolute;inset:0;z-index:50;background:transparent;overflow:hidden;display:none;">
+
+    <!-- OV1: warm host intro -->
+    <div id="ov1" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:clamp(16px,4dvh,24px);text-align:center;">
+      <div id="ov1dim" style="position:absolute;inset:0;background:rgba(18,12,8,.64);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;transition:opacity .55s ease;"></div>
+      <div id="burst" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;"></div>
+      <div id="ov1card" style="position:relative;opacity:0;transform:scale(.85) translateY(10px);transition:opacity .6s ease, transform .6s cubic-bezier(.2,1,.3,1);z-index:2;background:linear-gradient(170deg,rgba(42,30,22,.97),rgba(24,15,9,.98));border:1px solid color-mix(in srgb,var(--gold) 45%,transparent);border-radius:26px;padding:0 22px 24px;max-width:336px;box-shadow:0 30px 70px -16px rgba(0,0,0,.8);">
+        <!-- host avatar -->
+        <div style="margin-top:-44px;margin-bottom:6px;display:flex;justify-content:center;">
+          <div id="introHost" style="width:clamp(88px,22vw,108px);height:clamp(88px,22vw,108px);border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 35%,var(--hero-b),var(--ov3));border:3px solid var(--gold-lt);box-shadow:0 10px 26px -8px rgba(0,0,0,.7);"></div>
+        </div>
+        <div style="font-family:Georgia,serif;color:var(--gold-lt);font-size:13px;letter-spacing:.04em;margin-bottom:2px;">Hi gorgeous, I'm Mia ✨</div>
+        <div style="font-size:11px;color:var(--cream2);opacity:.85;margin-bottom:12px;">Your Korean Facial specialist at Studio Luna</div>
+        <h1 style="font-family:Georgia,serif;color:var(--cream);font-size:24px;line-height:1.15;margin:0 0 10px;">Before you pick a time…<br>I have a gift for you 🎁</h1>
+        <p id="introLines" style="color:var(--cream2);font-size:14px;line-height:1.5;margin:0 0 20px;min-height:78px;"></p>
+        <button id="toSpin" style="border:none;cursor:pointer;padding:16px 36px;border-radius:9999px;font-family:Georgia,serif;font-size:17px;font-weight:800;color:var(--cta-text);background:linear-gradient(150deg,var(--cta),var(--cta-2));box-shadow:0 12px 34px -6px var(--cta-glow),inset 0 1px 0 rgba(255,255,255,.4);animation:pulse 1.8s ease-in-out infinite;">Spin My Gift With Me →</button>
+        <p style="color:var(--ink-soft);font-size:10px;margin:14px 0 0;">No purchase necessary · One spin per guest</p>
+      </div>
+    </div>
+
+    <!-- OV2: Mia presents the wheel -->
+    <div id="ov2" style="position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:clamp(10px,2.4dvh,20px);padding:clamp(14px,3dvh,26px) 16px;text-align:center;overflow:hidden;background:radial-gradient(130% 100% at 50% -10%,var(--ov1) 0%,var(--ov2) 55%,var(--ov3) 100%);">
+      <div style="flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div style="display:inline-block;padding:4px 12px;border-radius:9999px;font-size:10px;font-weight:700;letter-spacing:.2em;background:var(--btn-b);color:var(--cream);">MIA'S NEW-GUEST GIFT</div>
+        <h2 style="font-family:Georgia,serif;color:var(--cream);font-size:clamp(19px,5.6vw,24px);margin:0;text-shadow:0 3px 12px rgba(0,0,0,.5);">Let's spin together!</h2>
+        <p style="color:var(--cream2);font-size:clamp(11px,3.2vw,13px);margin:0;max-width:250px;line-height:1.45;">Tap the wheel — every guest wins a treat ✦</p>
+      </div>
+
+      <div id="wheelWrap" style="position:relative;flex:0 0 auto;width:min(80vw,46dvh);height:min(80vw,46dvh);">
+        <button id="spinBtn" style="position:absolute;inset:0;width:100%;height:100%;border:none;background:transparent;cursor:pointer;padding:0;">
+          <svg viewBox="0 0 400 400" style="width:100%;height:100%;display:block;filter:drop-shadow(-8px 6px 22px rgba(0,0,0,.5));">
+            <defs>
+              <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--gold-lt)"/><stop offset=".5" stop-color="var(--gold-dk)"/><stop offset="1" stop-color="var(--gold-lt)"/></linearGradient>
+              <filter id="sf" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/></filter>
+            </defs>
+            <circle cx="200" cy="200" r="196" fill="#000" opacity="0.2"/>
+            <circle cx="200" cy="200" r="192" fill="none" stroke="url(#rim)" stroke-width="8"/>
+            <g id="wheel" style="transform-origin:200px 200px;"></g>
+            <circle cx="200" cy="200" r="46" fill="var(--cta)" stroke="url(#rim)" stroke-width="4" filter="url(#sf)"/>
+            <text id="hub" x="200" y="207" text-anchor="middle" style="font-family:Georgia,serif;font-size:17px;font-weight:800;fill:var(--cta-text);">SPIN</text>
+          </svg>
+        </button>
+        <svg viewBox="0 0 60 60" style="position:absolute;left:-3%;top:50%;transform:translateY(-50%);width:13%;height:13%;z-index:6;pointer-events:none;filter:drop-shadow(0 3px 5px rgba(0,0,0,.45));">
+          <path d="M 52 30 L 18 13 L 18 47 Z" fill="var(--cream)"/><path d="M 52 30 L 18 13 L 18 47 Z" fill="none" stroke="url(#rim)" stroke-width="3"/>
+        </svg>
+      </div>
+
+      <!-- Mia avatar + speech bubble, cheering you on -->
+      <div id="presenter" style="flex:0 0 auto;z-index:5;display:flex;align-items:center;gap:10px;max-width:94%;animation:floaty 4s ease-in-out infinite;">
+        <div id="presenterFace" style="width:clamp(46px,12vw,62px);height:clamp(46px,12vw,62px);border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 35%,var(--hero-b),var(--ov3));border:3px solid var(--gold-lt);box-shadow:0 10px 24px -8px rgba(0,0,0,.6);flex:0 0 auto;"></div>
+        <div style="background:var(--cream);color:var(--espresso);font-size:clamp(11px,3vw,12.5px);font-weight:600;padding:9px 13px;border-radius:14px 14px 14px 3px;box-shadow:0 8px 20px -8px rgba(0,0,0,.5);max-width:210px;line-height:1.35;text-align:left;">Ready? Tap to spin — good luck! 💕</div>
+      </div>
+    </div>
+
+    <!-- OV3: warm win reaction -->
+    <div id="ov3" style="position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:clamp(18px,4dvh,30px);text-align:center;background:radial-gradient(130% 100% at 50% -10%,var(--ov1) 0%,var(--ov2) 55%,var(--ov3) 100%);">
+      <div id="confetti" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
+      <div id="ov3inner" style="position:relative;z-index:2;">
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:clamp(6px,1.4dvh,8px);">
+          <div id="winHost" style="width:clamp(48px,13vw,56px);height:clamp(48px,13vw,56px);border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 35%,var(--hero-b),var(--ov3));border:2px solid var(--gold-lt);flex-shrink:0;"></div>
+          <div style="text-align:left;"><div style="color:var(--gold-lt);font-size:11px;font-weight:700;letter-spacing:.1em;">MIA SAYS</div><div style="color:var(--cream);font-family:Georgia,serif;font-size:14px;">Yay — you won! 💕</div></div>
+        </div>
+        <img id="rwdImg" alt="" style="display:none;margin:clamp(6px,1.4dvh,8px) auto clamp(10px,2dvh,14px);max-height:34dvh;width:auto;max-width:74vw;object-fit:contain;border-radius:14px;box-shadow:0 14px 32px -10px rgba(0,0,0,.6);"/>
+        <div id="rwdIcon" style="width:clamp(72px,18vw,92px);height:clamp(72px,18vw,92px);margin:clamp(6px,1.4dvh,8px) auto clamp(10px,2dvh,14px);border-radius:50%;display:none;align-items:center;justify-content:center;box-shadow:0 10px 28px -8px rgba(0,0,0,.6),0 0 0 4px rgba(255,255,255,.12);"></div>
+        <h2 id="rwd" style="font-family:Georgia,serif;color:var(--cream);font-size:clamp(21px,6vw,27px);line-height:1.15;margin:0 0 8px;text-shadow:0 3px 12px rgba(0,0,0,.5);max-width:320px;"></h2>
+        <p id="rsub" style="font-size:clamp(12px,3.4vw,13.5px);color:var(--cream2);margin:0 0 clamp(12px,2.6dvh,20px);"></p>
+        <div style="border-radius:14px;padding:12px 20px;display:inline-block;background:rgba(0,0,0,.45);border:1px solid color-mix(in srgb,var(--gold) 55%,transparent);margin-bottom:clamp(14px,3dvh,24px);"><span style="font-size:10px;letter-spacing:.18em;display:block;color:var(--gold);margin-bottom:2px;">YOUR PRIZE CODE</span><span id="rcode" style="font-family:ui-monospace,monospace;color:#fff;font-size:22px;font-weight:700;letter-spacing:3px;"></span></div>
+        <br>
+        <button id="toBooking" style="border:none;cursor:pointer;padding:16px 36px;border-radius:9999px;font-family:Georgia,serif;font-size:16px;font-weight:800;color:var(--cta-text);background:linear-gradient(150deg,var(--cta),var(--cta-2));box-shadow:0 12px 34px -6px var(--cta-glow),inset 0 1px 0 rgba(255,255,255,.4);">Pick My Appointment →</button>
+        <p style="color:var(--ink-soft);font-size:11px;margin:16px 0 0;max-width:300px;line-height:1.5;">Redeem only with a booked visit · new guests · expires in 30 days · stated values are regular menu prices.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+  // ===== Esthetician portrait (validated) =====
+  function portrait(expr){var gold=getComputedStyle(document.body).getPropertyValue('--gold-lt')||'#E6C871';
+  var mouth={
+    welcome:'<path d="M104 152 q8 -6 16 -2 q8 -4 16 2 q-8 5 -16 5 q-8 0 -16 -5 Z" fill="#D9667A"/><path d="M104 152 q16 7 32 0" fill="none" stroke="#B24A60" stroke-width="1.4"/><ellipse cx="120" cy="156" rx="5" ry="2" fill="#fff" opacity=".35"/>',
+    excited:'<path d="M101 150 q19 -5 38 0 q-4 16 -19 16 q-15 0 -19 -16 Z" fill="#B24A60"/><path d="M104 152 q16 5 32 0" fill="#fff"/><path d="M108 161 q12 6 24 0" fill="#E07A8C"/>',
+    joyful:'<path d="M99 149 q21 -6 42 0 q-5 19 -21 19 q-16 0 -21 -19 Z" fill="#A83E54"/><path d="M103 151 q17 5 34 0" fill="#fff"/><path d="M110 162 q10 7 20 0" fill="#E07A8C"/>',
+    warm:'<path d="M105 153 q15 6 30 0 q-6 7 -15 7 q-9 0 -15 -7 Z" fill="#D9667A"/><path d="M105 153 q15 5 30 0" fill="none" stroke="#B24A60" stroke-width="1.4"/>'
+  }[expr||'welcome'];
+  var brow=(expr==='joyful'||expr==='excited')
+    ?'<path d="M87 106 q13 -8 26 -3" fill="none" stroke="#3A2A20" stroke-width="3" stroke-linecap="round"/><path d="M127 103 q13 -5 26 3" fill="none" stroke="#3A2A20" stroke-width="3" stroke-linecap="round"/>'
+    :'<path d="M87 109 q13 -7 26 -2" fill="none" stroke="#3A2A20" stroke-width="3" stroke-linecap="round"/><path d="M127 107 q13 -5 26 2" fill="none" stroke="#3A2A20" stroke-width="3" stroke-linecap="round"/>';
+  return '<svg viewBox="0 0 240 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"><defs>\
+<linearGradient id="pk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6D3B4"/><stop offset="1" stop-color="#E7B58C"/></linearGradient>\
+<linearGradient id="pk2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3CBA8"/><stop offset="1" stop-color="#E3AE83"/></linearGradient>\
+<linearGradient id="ph" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3328"/><stop offset="1" stop-color="#2A1B14"/></linearGradient>\
+<linearGradient id="pr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EFE3D9"/></linearGradient>\
+<radialGradient id="pbl" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F0A0A0" stop-opacity=".55"/><stop offset="1" stop-color="#F0A0A0" stop-opacity="0"/></radialGradient>\
+<radialGradient id="pgl" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".85"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient></defs>\
+<path d="M28 260 q12 -54 92 -54 q80 0 92 54 Z" fill="url(#pr)"/>\
+<path d="M92 214 q28 26 56 0 l6 14 q-34 30 -68 0 Z" fill="#F6D3B4"/>\
+<path d="M104 176 q16 16 32 0 l0 30 q-16 14 -32 0 Z" fill="url(#pk2)"/>\
+<path d="M104 182 q16 12 32 0 l0 8 q-16 12 -32 0 Z" fill="#000" opacity="0.06"/>\
+<path d="M58 120 q-6 -66 62 -70 q68 4 62 70 q4 40 -8 66 q-8 -30 -16 -40 q6 -34 -38 -38 q-44 4 -38 38 q-12 10 -16 40 q-12 -26 -8 -66 Z" fill="url(#ph)"/>\
+<path d="M120 60 q44 0 46 52 q1 26 -8 44 q-10 22 -38 24 q-28 -2 -38 -24 q-9 -18 -8 -44 q2 -52 46 -52 Z" fill="url(#pk)"/>\
+<ellipse cx="74" cy="128" rx="8" ry="12" fill="url(#pk2)"/><ellipse cx="166" cy="128" rx="8" ry="12" fill="url(#pk2)"/>\
+<circle cx="74" cy="140" r="2.6" fill="'+gold+'"/><circle cx="166" cy="140" r="2.6" fill="'+gold+'"/>\
+<path d="M72 78 q48 -26 96 0 l0 12 q-48 -22 -96 0 Z" fill="url(#pr)"/>\
+<path d="M70 80 q-6 -2 -8 4 q6 2 10 4 Z" fill="#EFE3D9"/>\
+<ellipse cx="120" cy="96" rx="14" ry="8" fill="url(#pgl)" opacity=".5"/>\
+<ellipse cx="98" cy="128" rx="11" ry="9" fill="url(#pgl)" opacity=".45"/><ellipse cx="142" cy="128" rx="11" ry="9" fill="url(#pgl)" opacity=".45"/>\
+<ellipse cx="120" cy="150" rx="9" ry="7" fill="url(#pgl)" opacity=".4"/>\
+<ellipse cx="96" cy="134" rx="13" ry="9" fill="url(#pbl)"/><ellipse cx="144" cy="134" rx="13" ry="9" fill="url(#pbl)"/>\
+'+brow+'\
+<path d="M86 120 q14 -11 28 0 q-14 9 -28 0 Z" fill="#fff"/><circle cx="100" cy="119" r="6.4" fill="#6B4A33"/><circle cx="100" cy="119" r="3" fill="#2A1B14"/><circle cx="102" cy="117" r="1.4" fill="#fff"/>\
+<path d="M86 120 q14 -11 28 0" fill="none" stroke="#2A1B14" stroke-width="2.4" stroke-linecap="round"/>\
+<path d="M88 118 l-3 -3 M95 115 l-1 -3 M102 114 l0 -3" stroke="#2A1B14" stroke-width="1.8" stroke-linecap="round"/>\
+<path d="M126 120 q14 -11 28 0 q-14 9 -28 0 Z" fill="#fff"/><circle cx="140" cy="119" r="6.4" fill="#6B4A33"/><circle cx="140" cy="119" r="3" fill="#2A1B14"/><circle cx="142" cy="117" r="1.4" fill="#fff"/>\
+<path d="M126 120 q14 -11 28 0" fill="none" stroke="#2A1B14" stroke-width="2.4" stroke-linecap="round"/>\
+<path d="M152 118 l3 -3 M145 115 l1 -3 M138 114 l0 -3" stroke="#2A1B14" stroke-width="1.8" stroke-linecap="round"/>\
+<path d="M120 124 l-3 14 q3 4 6 0" fill="none" stroke="#D89A72" stroke-width="2.4" stroke-linecap="round"/>\
+'+mouth+'\
+<g fill="'+gold+'"><path d="M184 70 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2 Z"/><path d="M52 92 l1.5 5 5 1.5 -5 1.5 -1.5 5 -1.5 -5 -5 -1.5 5 -1.5 Z"/><circle cx="192" cy="150" r="2"/></g></svg>';}
+
+  // ===== Mia presenter beside the wheel (half body, arm gesturing right) =====
+  function presenter(){var gold=getComputedStyle(document.body).getPropertyValue('--gold-lt')||'#E6C871';
+  return '<svg viewBox="0 0 165 300" width="100%" height="100%" preserveAspectRatio="xMidYMax meet"><defs>\
+<linearGradient id="qk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6D3B4"/><stop offset="1" stop-color="#E7B58C"/></linearGradient>\
+<linearGradient id="qr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E9DDD0"/></linearGradient>\
+<linearGradient id="qh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3328"/><stop offset="1" stop-color="#2A1B14"/></linearGradient></defs>\
+<!-- robe body -->\
+<path d="M34 300 q-6 -110 56 -120 q66 8 60 120 Z" fill="url(#qr)"/>\
+<path d="M90 182 q-40 6 -56 118 l30 0 q6 -70 26 -96 Z" fill="#000" opacity="0.04"/>\
+<!-- right arm gesturing toward wheel -->\
+<path d="M120 196 q40 6 40 44 q-2 14 -16 16 q-12 -2 -12 -14 q2 -20 -18 -28 Z" fill="url(#qr)"/>\
+<circle cx="150" cy="248" r="13" fill="url(#qk)"/>\
+<path d="M150 240 q8 -2 10 4 M150 246 q9 0 11 5 M149 252 q8 2 9 7" stroke="#D89A72" stroke-width="2" fill="none" stroke-linecap="round"/>\
+<!-- neck + head -->\
+<path d="M76 150 q14 14 28 0 l0 26 q-14 12 -28 0 Z" fill="url(#qk)"/>\
+<g transform="translate(-30,-78) scale(0.96)">'+
+   portrait().replace('<svg viewBox="0 0 240 260" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">','').replace('</svg>','')
+  +'</g></svg>';}
+
+  (function(){
+  var PRIZES=[
+    {l1:"Vitamin C",l2:"Cleanser",w:20,fill:"#C76B82",text:"#FFFFFF",reward:"FREE Vitamin C Cleanser",sub:"$45 value \u00b7 with any booked treatment",cp:"VITC",ic:"bottle",key:"vitc",val:"$45",img:"/public/img/gifts/vitamin-c.png"},
+    {l1:"Gold Mask",l2:"Add-On",w:20,fill:"#C9A24B",text:"#3D2D22",reward:"FREE 24K Gold Mask Add-On",sub:"$65 value \u00b7 redeem on your visit",cp:"GOLD",ic:"mask",key:"gold",val:"$65",img:"/public/img/gifts/gold.png"},
+    {l1:"LED Light",l2:"Add-On",w:15,fill:"#8FA88B",text:"#FFFFFF",reward:"FREE LED Light Therapy Add-On",sub:"$55 value \u00b7 with any facial",cp:"GLOW",ic:"led",key:"glow",val:"$55",img:"/public/img/gifts/led.png"},
+    {l1:"$10 Off",l2:"1st Visit",w:15,fill:"#B98A66",text:"#FFFFFF",reward:"$10 OFF Your First Treatment",sub:"New guests · first visit · one per guest",cp:"SAVE10",ic:"tag",key:"save50",val:"$10",img:"/public/img/gifts/10-off.png"},
+    {l1:"Bring a",l2:"Friend \u2665",w:7,fill:"#7A5B43",text:"#FFFFFF",reward:"Bring a Friend \u2014 2 for 1",sub:"Come with a friend \u2014 their facial is free (2 guests, 1 pays)",cp:"DUO",ic:"friends",key:"duo",val:"Friend free",img:"/public/img/gifts/bring-a-friend.png"},
+    {l1:"15% Off",l2:"Any Service",w:13,fill:"#E3C879",text:"#3D2D22",reward:"15% OFF Any Single Service",sub:"First visit \u00b7 new guests",cp:"PCT15",ic:"pct",key:"pct15",val:"15%",img:"/public/img/gifts/15-percent.png"},
+    {l1:"Hydra Jelly",l2:"Mask",w:7,fill:"#E9C6B7",text:"#3D2D22",reward:"FREE Hydra Jelly Mask Add-On",sub:"$45 value \u00b7 redeem on your visit",cp:"JELLY",ic:"jelly",key:"jelly",val:"$45",img:"/public/img/gifts/hydra-jelly.png"},
+    {l1:"Dermaplane",l2:"Add-On",w:3,fill:"#8C4A38",text:"#FFFFFF",reward:"FREE Dermaplaning Add-On",sub:"$60 value \u00b7 with any facial",cp:"DERMA",ic:"derma",key:"derma",val:"$60",img:"/public/img/gifts/dermaplaning.jpeg"}
+  ];
+  var ICONS={
+    bottle:'<rect x="22" y="20" width="20" height="10" rx="3"/><rect x="27" y="10" width="10" height="9" rx="2"/><rect x="16" y="30" width="32" height="30" rx="8"/><path d="M24 42h16M24 50h11" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/>',
+    mask:'<path d="M32 12c12 0 20 6 20 16 0 14-9 24-20 24S12 42 12 28c0-10 8-16 20-16z"/><circle cx="24" cy="30" r="3" fill="#fff"/><circle cx="40" cy="30" r="3" fill="#fff"/><path d="M24 42q8 6 16 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>',
+    led:'<rect x="14" y="16" width="36" height="26" rx="5"/><path d="M22 48l4-6M42 48l-4-6M32 48v-6" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/><g fill="#fff"><circle cx="24" cy="29" r="2.5"/><circle cx="32" cy="25" r="2.5"/><circle cx="40" cy="29" r="2.5"/><circle cx="32" cy="33" r="2.5"/></g>',
+    tag:'<path d="M14 14h22l16 16-22 22-16-16z"/><circle cx="26" cy="26" r="4" fill="#fff"/><text x="36" y="42" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">$10</text>',
+    friends:'<circle cx="24" cy="22" r="8"/><circle cx="42" cy="24" r="7"/><path d="M10 52c0-9 6-15 14-15s14 6 14 15"/><path d="M36 52c0-7 4-12 10-12s10 4 10 12" opacity="0.85"/>',
+    pct:'<circle cx="32" cy="32" r="22"/><circle cx="25" cy="25" r="4" fill="#fff"/><circle cx="39" cy="39" r="4" fill="#fff"/><path d="M42 22L22 42" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>',
+    jelly:'<rect x="18" y="22" width="28" height="9" rx="4"/><path d="M20 30h24v22a6 6 0 01-6 6H26a6 6 0 01-6-6z"/><path d="M26 41q6 5 12 0" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="30" cy="37" r="2" fill="#fff"/><circle cx="38" cy="46" r="2.4" fill="#fff" opacity=".7"/>',
+    derma:'<g transform="rotate(42 32 32)"><rect x="28" y="10" width="8" height="24" rx="4"/><path d="M26 34h12l-3 16h-6z"/><path d="M30 38h4" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></g>'
+  };
+  function iconSVG(key,size,color){return '<svg viewBox="0 0 64 64" width="'+size+'" height="'+size+'" fill="'+(color||'#fff')+'">'+(ICONS[key]||ICONS.mask)+'</svg>';}
+
+  var N=PRIZES.length,SEG=360/N,R=192,NS="http://www.w3.org/2000/svg",$=function(id){return document.getElementById(id);};
+  function pt(d,r){var a=d*Math.PI/180;return{x:200+r*Math.sin(a),y:200-r*Math.cos(a)};}
+  function pathd(i){var a=pt(i*SEG,R),b=pt((i+1)*SEG,R);return"M 200 200 L "+a.x+" "+a.y+" A "+R+" "+R+" 0 0 1 "+b.x+" "+b.y+" Z";}
+  var wheel=$("wheel");
+  for(var i=0;i<N;i++){var p=PRIZES[i],mid=i*SEG+SEG/2,lp=pt(mid,116);
+    var pa=document.createElementNS(NS,"path");pa.setAttribute("d",pathd(i));pa.setAttribute("fill",p.fill);pa.setAttribute("stroke","#FBF6F0");pa.setAttribute("stroke-width","2");wheel.appendChild(pa);
+    var g=document.createElementNS(NS,"g");g.setAttribute("transform","translate("+lp.x+" "+lp.y+") rotate("+(mid+90)+")");g.style.pointerEvents="none";
+    var t1=document.createElementNS(NS,"text");t1.setAttribute("text-anchor","middle");t1.setAttribute("y","-3");t1.setAttribute("style","font-family:Georgia,serif;font-size:12.5px;font-weight:700;fill:"+p.text);t1.textContent=p.l1;
+    var t2=document.createElementNS(NS,"text");t2.setAttribute("text-anchor","middle");t2.setAttribute("y","12");t2.setAttribute("style","font-family:Georgia,serif;font-size:12.5px;font-weight:700;fill:"+p.text);t2.textContent=p.l2;
+    g.appendChild(t1);g.appendChild(t2);wheel.appendChild(g);}
+
+  // ===== Real esthetician photos (Higgsfield) — one expression per step =====
+  var FACE={
+    welcome:"/public/img/mia/welcome.png",
+    excited:"/public/img/mia/excited.png",
+    celebrate:"/public/img/mia/celebrate.png",
+    warm:"/public/img/mia/warm.png"
+  };
+  // Photo first; if it fails to load, the SVG illustration underneath shows automatically.
+  function paintFace(id,url,expr){var el=$(id);el.style.position="relative";
+    el.innerHTML='<div style="position:absolute;inset:0;">'+portrait(expr)+'</div>'+
+      '<img src="'+url+'" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.remove()"/>';}
+  paintFace("introHost",FACE.welcome,"welcome");
+  paintFace("presenterFace",FACE.excited,"excited");
+  paintFace("winHost",FACE.celebrate,"joyful");
+  paintFace("doneHost",FACE.warm,"warm");
+
+  // ===== confetti =====
+  function confColors(){var s=getComputedStyle(document.body);return [s.getPropertyValue('--conf1'),s.getPropertyValue('--conf2'),s.getPropertyValue('--conf3'),s.getPropertyValue('--conf4'),s.getPropertyValue('--conf5'),s.getPropertyValue('--conf6')];}
+  function shoot(c,o){var cols=confColors();for(var k=0;k<o.n;k++){var s=document.createElement("span");var ang=o.dir+(Math.random()-0.5)*o.spread,dist=o.power*(0.5+Math.random()),dx=Math.cos(ang)*dist,dy=Math.sin(ang)*dist,sz=7+Math.random()*9,strip=Math.random()>0.45,spark=Math.random()>0.8;
+    if(spark){s.textContent="✦";s.style.cssText="position:absolute;top:"+o.oy+"%;left:"+o.ox+"%;color:"+cols[k%cols.length]+";font-size:"+(10+Math.random()*10)+"px;transform:translate(-50%,-50%);text-shadow:0 0 6px "+cols[k%cols.length]+";";}
+    else{s.style.cssText="position:absolute;top:"+o.oy+"%;left:"+o.ox+"%;width:"+(strip?sz*0.5:sz)+"px;height:"+(strip?sz*1.5:sz)+"px;background:"+cols[k%cols.length]+";border-radius:"+(strip?"1px":"50%")+";transform:translate(-50%,-50%);box-shadow:0 1px 3px rgba(0,0,0,.25);";}
+    c.appendChild(s);(function(el,dx,dy){var rot=Math.random()*900-450;el.animate([{transform:"translate(-50%,-50%) rotate(0) scale(1)",opacity:1},{transform:"translate(calc(-50% + "+dx+"px),calc(-50% + "+(dy*0.45)+"px)) rotate("+(rot*0.5)+"deg)",opacity:1,offset:0.5},{transform:"translate(calc(-50% + "+(dx*1.1)+"px),calc(-50% + "+(dy+260)+"px)) rotate("+rot+"deg) scale(.9)",opacity:0}],{duration:1500+Math.random()*900,easing:"cubic-bezier(.15,.55,.3,1)",fill:"forwards"});setTimeout(function(){el.remove();},2600);})(s,dx,dy);}}
+  // full-screen confetti: dense top-rain across full width + center pop + side cannons
+  function fillScreen(c){
+    for(var col=2;col<=98;col+=6){ shoot(c,{n:4,ox:col,oy:-4,spread:Math.PI*0.45,power:90+Math.random()*120,dir:Math.PI/2}); }
+    shoot(c,{n:60,ox:50,oy:42,spread:Math.PI*2,power:300,dir:0});
+    shoot(c,{n:44,ox:2,oy:80,spread:Math.PI*0.5,power:520,dir:-Math.PI/2.4});
+    shoot(c,{n:44,ox:98,oy:80,spread:Math.PI*0.5,power:520,dir:-Math.PI/1.65});
+  }
+  function celebrate(c){ fillScreen(c); setTimeout(function(){fillScreen(c);},420); setTimeout(function(){
+      for(var col=4;col<=96;col+=8){ shoot(c,{n:3,ox:col,oy:-4,spread:Math.PI*0.4,power:100+Math.random()*120,dir:Math.PI/2}); }
+      shoot(c,{n:36,ox:50,oy:36,spread:Math.PI*2,power:320,dir:0});
+    },920); }
+  function entryBurst(c){ fillScreen(c); setTimeout(function(){
+      for(var col=4;col<=96;col+=9){ shoot(c,{n:3,ox:col,oy:-4,spread:Math.PI*0.4,power:90+Math.random()*120,dir:Math.PI/2}); }
+    },380); }
+
+  // ===== entry sequence: page first, then Mia's popup with typed lines =====
+  var INTRO=["So glad you came in today 💕","You've unlocked a new-guest gift 🎁","Spin to see what you've won!"];
+  function typeLines(){var el=$("introLines"),idx=0;el.textContent="";el.style.opacity="1";
+    function next(){if(idx>=INTRO.length)return;var line=document.createElement("div");line.textContent=INTRO[idx];line.style.cssText="white-space:nowrap;margin:5px 0;animation:fadeUp .5s ease both;";el.appendChild(line);idx++;setTimeout(next, idx===1?850:1500);}
+    next();}
+  function launchGiftPopup(){
+    $("ov").style.display="block";
+    // BEAT 1: fireworks burst over the page
+    entryBurst($("burst"));
+    setTimeout(function(){entryBurst($("burst"));},360);
+    // BEAT 2: after the burst, dim fades in and Mia fades up
+    setTimeout(function(){
+      $("ov1dim").style.opacity="1";
+      $("ov1card").style.opacity="1";
+      $("ov1card").style.transform="scale(1) translateY(0)";
+      setTimeout(typeLines,500);
+      setTimeout(fitAll,680);
+    },780);
+  }
+  setTimeout(launchGiftPopup,1000);
+
+  $("toSpin").onclick=function(){$("ov1").style.transition="opacity .4s";$("ov1").style.opacity="0";setTimeout(function(){$("ov1").style.display="none";$("ov2").style.display="flex";$("wheelWrap").animate([{transform:"scale(.62)",opacity:0},{transform:"scale(1)",opacity:1}],{duration:600,easing:"cubic-bezier(.2,1,.3,1)"});$("presenter").animate([{transform:"translateY(14px)",opacity:0},{transform:"translateY(0)",opacity:1}],{duration:600,easing:"cubic-bezier(.2,1,.3,1)"});fitAll();},400);};
+
+  var spinning=false,rot=0,WON=null,CODE="";
+  function pick(){var t=0,k;for(k=0;k<N;k++)t+=PRIZES[k].w;var r=Math.random()*t;for(k=0;k<N;k++){if(r<PRIZES[k].w)return k;r-=PRIZES[k].w;}return N-1;}
+  function mkcode(cp){return cp+"-"+Math.random().toString(36).slice(2,6).toUpperCase();}
+  function shade(hex){var n=parseInt(hex.slice(1),16),r=(n>>16)&255,g=(n>>8)&255,b=n&255;return"rgb("+Math.round(r*0.72)+","+Math.round(g*0.72)+","+Math.round(b*0.72)+")";}
+  $("spinBtn").onclick=function(){if(spinning)return;spinning=true;$("hub").textContent="\u2026";
+    var idx=pick(),center=idx*SEG+SEG/2,jit=(Math.random()-0.5)*(SEG-14),target=360*6+270-center-jit,base=Math.ceil(rot/360)*360,next=base+target;rot=next;
+    wheel.style.transition="transform 5s cubic-bezier(0.16,1,0.3,1)";wheel.style.transform="rotate("+next+"deg)";
+    setTimeout(function(){WON=PRIZES[idx];CODE=mkcode(WON.cp);reveal();},5050);};
+  // Show the hosted gift-card image (matched to WON.img); gracefully fall back to the SVG icon.
+  function setGiftVisual(imgId,iconId,iconSize){var img=$(imgId),icon=$(iconId);if(!img||!icon||!WON)return;icon.style.background="linear-gradient(150deg,"+WON.fill+","+shade(WON.fill)+")";icon.innerHTML=iconSVG(WON.ic,iconSize,"#fff");icon.style.display="none";img.alt=WON.reward;img.onload=function(){fitAll();};img.onerror=function(){img.style.display="none";icon.style.display="flex";fitAll();};img.style.display="block";img.src=WON.img;}
+  function reveal(){$("ov2").style.transition="opacity .35s";$("ov2").style.opacity="0";setTimeout(function(){$("ov2").style.display="none";$("ov3").style.display="flex";$("rwd").textContent=WON.reward;$("rsub").textContent=WON.sub;$("rcode").textContent=CODE;setGiftVisual("rwdImg","rwdIcon",46);celebrate($("confetti"));fitAll();},350);}
+  $("toBooking").onclick=function(){$("bannerPrize").textContent="You won: "+WON.reward;$("bannerCode").textContent=CODE;$("prizeBanner").style.display="flex";$("d-prizeText").textContent=WON.reward+" — auto-applied";$("d-prizeRow").style.display="flex";$("funnel").style.pointerEvents="auto";$("ov").style.transition="opacity .45s";$("ov").style.opacity="0";setTimeout(function(){$("ov").style.display="none";},450);};
+
+  // ===== Studio Luna booking backend (preserved from the live page) =====
+  var LUNA=(function(){
+    var TEST=new URLSearchParams(location.search).get('test')==='1';
+    var SERVICE_NAME="Korean Facial",SERVICE_DURATION_MIN=60,BUSINESS_TZ="America/Los_Angeles";
+    var GHL={locationId:'9fZSzFzTFV8sZzfj4SlV',calendarId:'tpRN59ydpJmF6BeiDuEl',userId:'2tQreqXcDpaAiSBqlK7T',apiKey:'pit-cb0574e9-f84b-402f-a440-36aabe739ad1',apiBase:'https://services.leadconnectorhq.com',version:'2021-07-28'};
+    var SHARED_PIXEL_ID='1178133073434960',DEDICATED_PIXEL_ID='1541798407303624';
+    function pad(n){return String(n).padStart(2,"0");}
+    function offsetMinutesForTz(date,tz){var dtf=new Intl.DateTimeFormat("en-US",{timeZone:tz,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"});var parts=dtf.formatToParts(date),get=function(t){return parseInt(parts.find(function(p){return p.type===t;}).value,10);};var asUtc=Date.UTC(get("year"),get("month")-1,get("day"),get("hour"),get("minute"),get("second"));return Math.round((asUtc-date.getTime())/60000);}
+    function dateFromWallTime(y,mo,d,h,mi,tz){var approx=new Date(Date.UTC(y,mo,d,h,mi));var off=offsetMinutesForTz(approx,tz);return new Date(approx.getTime()-off*60000);}
+    function isoInTz(date,tz){var off=offsetMinutesForTz(date,tz),wall=new Date(date.getTime()+off*60000),sign=off>=0?"+":"-",abs=Math.abs(off);return wall.getUTCFullYear()+"-"+pad(wall.getUTCMonth()+1)+"-"+pad(wall.getUTCDate())+"T"+pad(wall.getUTCHours())+":"+pad(wall.getUTCMinutes())+":"+pad(wall.getUTCSeconds())+sign+pad(Math.floor(abs/60))+":"+pad(abs%60);}
+    function parseTime(lbl){var m=lbl.match(/(\d+):(\d+)\s*(AM|PM)/i),h=parseInt(m[1],10)%12;if(/PM/i.test(m[3]))h+=12;return{label:lbl,hour:h,minute:parseInt(m[2],10)};}
+    function track(ev,p){if(typeof window.fbq==="function"){try{window.fbq("trackSingle",SHARED_PIXEL_ID,ev,p||{});}catch(_){}}}
+    function trackDedicated(ev,p,eid){if(typeof window.fbq==="function"){try{window.fbq("trackSingle",DEDICATED_PIXEL_ID,ev,p||{},eid?{eventID:eid}:{});}catch(_){}}}
+    function ghlFetch(path,body){return fetch(GHL.apiBase+path,{method:'POST',headers:{'Authorization':'Bearer '+GHL.apiKey,'Version':GHL.version,'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)}).then(function(res){return res.json().catch(function(){return{};}).then(function(data){if(!res.ok)throw new Error(data.message||('HTTP '+res.status));return data;});});}
+    try{trackDedicated("ViewContent",{content_name:SERVICE_NAME});}catch(_){}
+    return {TEST:TEST,SERVICE_NAME:SERVICE_NAME,SERVICE_DURATION_MIN:SERVICE_DURATION_MIN,BUSINESS_TZ:BUSINESS_TZ,GHL:GHL,isoInTz:isoInTz,dateFromWallTime:dateFromWallTime,parseTime:parseTime,track:track,trackDedicated:trackDedicated,ghlFetch:ghlFetch,selectedDateObj:null,selectedTime:null};
+  })();
+
+  // booking funnel
+  function go(s){[1,2,3].forEach(function(n){$("step"+n).style.display=(n===s?"block":"none");});$("done").style.display="none";document.querySelectorAll(".pdot").forEach(function(d){d.style.background=(+d.dataset.s<=s?"var(--mocha)":"var(--taupe)");});}
+  var days=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],dg=$("dateGrid"),base=new Date();
+  for(var d=0;d<6;d++){var dt=new Date(base.getTime()+(d+1)*86400000),b=document.createElement("button");b.className="chip";b.innerHTML="<div style='font-size:10px;opacity:.7;font-weight:600'>"+days[(dt.getDay()+6)%7]+"</div><div style='font-size:17px;font-weight:700'>"+dt.getDate()+"</div>";b.onclick=(function(btn,dd){return function(){document.querySelectorAll("#dateGrid .chip").forEach(function(x){x.classList.remove("sel");});btn.classList.add("sel");LUNA.selectedDateObj=dd;setTimeout(function(){go(2);},180);};})(b,dt);dg.appendChild(b);}
+  var TIMES=["10:00 AM","11:00 AM","12:30 PM","2:00 PM","3:30 PM","5:00 PM"],tg=$("timeGrid");
+  TIMES.forEach(function(t){var b=document.createElement("button");b.className="chip";b.textContent=t;b.onclick=function(){document.querySelectorAll("#timeGrid .chip").forEach(function(x){x.classList.remove("sel");});b.classList.add("sel");LUNA.selectedTime=LUNA.parseTime(t);setTimeout(function(){go(3);},180);};tg.appendChild(b);});
+  document.querySelectorAll(".backBtn").forEach(function(b){b.onclick=function(){go(+b.dataset.to);};});
+  $("scheduleBtn").onclick=function(){var nm=$("d-name").value.trim(),em=$("d-email").value.trim(),ph=$("d-phone").value.trim();if(!nm||!ph||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){$("d-err").textContent="Please complete all fields with a valid email.";$("d-err").style.display="block";return;}$("d-err").style.display="none";
+    if(!LUNA.selectedDateObj||!LUNA.selectedTime){$("d-err").textContent="Please choose a date and time.";$("d-err").style.display="block";return;}
+    var btn=$("scheduleBtn"),lbl=btn.textContent,TZ=LUNA.BUSINESS_TZ,G=LUNA.GHL;btn.disabled=true;btn.style.opacity="0.7";btn.textContent="Booking…";
+    var start=LUNA.dateFromWallTime(LUNA.selectedDateObj.getFullYear(),LUNA.selectedDateObj.getMonth(),LUNA.selectedDateObj.getDate(),LUNA.selectedTime.hour,LUNA.selectedTime.minute,TZ);
+    var end=new Date(start.getTime()+LUNA.SERVICE_DURATION_MIN*60000),parts=nm.split(/\s+/),firstName=parts[0],lastName=parts.slice(1).join(" ");
+    var eventId='sched_'+Date.now()+'_'+Math.random().toString(36).slice(2),leadId=null;
+    (async function(){
+      try{
+        // 1) persist lead + chosen slot (non-blocking)
+        try{var lr=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({locationId:G.locationId,client:location.hostname.split('.')[0].split('-')[0],page:location.hostname,treatment:LUNA.SERVICE_NAME,calendarId:G.calendarId,startTime:LUNA.isoInTz(start,TZ),endTime:LUNA.isoInTz(end,TZ),name:nm,email:em,phone:ph,fbclid:(new URLSearchParams(location.search)).get('fbclid')||undefined,fbp:(document.cookie.match(/_fbp=([^;]+)/)||[])[1],fbc:(document.cookie.match(/_fbc=([^;]+)/)||[])[1],eventId:eventId,test:LUNA.TEST})});var lj=await lr.json().catch(function(){return{};});leadId=lj.leadId||null;}catch(_){}
+        // 2) existing booking backend — contact + appointment (unchanged recipe)
+        var cr=await LUNA.ghlFetch('/contacts/upsert',{locationId:G.locationId,firstName:(LUNA.TEST?"[TEST] ":"")+(firstName||nm),lastName:lastName||'-',email:em,phone:ph,source:'Korean Facial LP',tags:LUNA.TEST?['Korean Facial','TEST-DONOTCOUNT']:['Korean Facial']});
+        var contactId=(cr.contact&&cr.contact.id)||cr.id;
+        var ar=await LUNA.ghlFetch('/calendars/events/appointments',{calendarId:G.calendarId,ignoreFreeSlotValidation:true,locationId:G.locationId,contactId:contactId,assignedUserId:G.userId,startTime:LUNA.isoInTz(start,TZ),endTime:LUNA.isoInTz(end,TZ),title:nm+' — Korean Facial',selectedTimezone:TZ,appointmentStatus:'new'});
+        var appointmentId=(ar&&(ar.id||ar.appointmentId||(ar.appointment&&ar.appointment.id)))||null;
+        var bookingStatus=appointmentId?'success':'lead_only';
+        try{fetch('/api/lead/result',{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({leadId:leadId,locationId:G.locationId,status:bookingStatus,appointmentId:appointmentId,eventId:eventId,scheduleFired:(!LUNA.TEST&&bookingStatus==='success'),test:LUNA.TEST})}).catch(function(){});}catch(_){}
+        // 3) gift webhook -> GHL via same-origin proxy (no secret in client). Fire-and-forget.
+        try{var apptDate=LUNA.selectedDateObj.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}).replace(',','');
+          fetch('/api/gift-webhook',{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({first_name:firstName||nm,email:em,phone:ph,sms_consent:true,prize_name:WON?WON.reward:null,prize_value:WON?WON.val:null,prize_code:CODE||null,prize_key:WON?WON.key:null,prize_image_url:WON?('https://luna-koreanfacial.ilovefacialtreatment.com'+WON.img):null,appt_date:apptDate,appt_time:LUNA.selectedTime.label,source:'spin_wheel'})}).catch(function(){});}catch(_){}
+        // 4) tracking after booking success (never blocks)
+        try{LUNA.track("Lead",{content_name:LUNA.SERVICE_NAME});if(!LUNA.TEST&&bookingStatus==='success')LUNA.track("Schedule",{content_name:LUNA.SERVICE_NAME});if(!LUNA.TEST&&bookingStatus==='success')LUNA.trackDedicated("Schedule",{content_name:LUNA.SERVICE_NAME},eventId);if(!LUNA.TEST&&bookingStatus==='success')LUNA.track("CompleteRegistration",{content_name:LUNA.SERVICE_NAME});if(!LUNA.TEST&&bookingStatus==='success')LUNA.trackDedicated("CompleteRegistration",{content_name:LUNA.SERVICE_NAME},eventId);}catch(_){}
+        // 5) v12 thank-you (unchanged)
+        $("step3").style.display="none";document.querySelectorAll(".pdot").forEach(function(x){x.style.background="var(--mocha)";});var first=nm.split(" ")[0];
+        $("doneMsg").innerHTML=first+", your Korean Facial is reserved.<br>A confirmation is on its way to "+em+".";
+        if(WON){setGiftVisual("donePrizeImg","donePrizeIcon",42);$("donePrizeCode").textContent=CODE;$("smsPrize").textContent=WON.reward;$("smsCode").textContent=CODE;}
+        $("done").style.display="block";document.body.classList.add("thanks");try{window.scrollTo(0,0);}catch(_){}fitAll();
+      }catch(err){
+        try{fetch('/api/lead/result',{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({leadId:leadId,locationId:G.locationId,status:'fail',error:(err&&err.message)?err.message:String(err),test:LUNA.TEST})}).catch(function(){});}catch(_){}
+        $("d-err").textContent=(err&&err.message)?err.message:"Failed to book appointment.";$("d-err").style.display="block";
+      }finally{btn.disabled=false;btn.style.opacity="";btn.textContent=lbl;}
+    })();};
+  // ===== scale-to-fit: guarantee the active screen fits one viewport (no scroll, no cutoff) =====
+  function fitEl(el){if(!el)return;el.style.transformOrigin='center center';el.style.transform='none';var p=el.parentElement,avail=(p?p.clientHeight:window.innerHeight)-20,h=el.scrollHeight;if(h>avail){el.style.transform='scale('+Math.max(0.5,avail/h)+')';}}
+  function vis(id){var e=document.getElementById(id);return e&&getComputedStyle(e).display!=='none'&&e.offsetParent!==null;}
+  function fitAll(){
+    if(window.innerWidth>560)return; // desktop: natural card layout
+    if(document.body.classList.contains('thanks')){fitEl($("done"));return;}
+    if(vis('ov3')){fitEl($("ov3inner"));return;}
+    if(vis('ov1')){fitEl($("ov1card"));return;}
+    // ov2 (wheel) + booking steps fit one viewport via CSS clamp/dvh sizing
+  }
+  window.addEventListener('resize',fitAll);
+  window.addEventListener('orientationchange',function(){setTimeout(fitAll,300);});
+  go(1);
+  })();
+</script>
 </body>
 </html>

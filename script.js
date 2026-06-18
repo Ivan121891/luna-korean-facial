@@ -291,6 +291,10 @@
     const [firstName, ...rest] = name.split(/\s+/);
     const lastName = rest.join(" ");
 
+    // One eventId per conversion — shared by browser dedicated pixel (eventID)
+    // and server CAPI (event_id) so Meta can dedup. In scope for the whole flow.
+    const eventId = 'sched_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+
     try {
       // 1) Upsert contact in GHL
       // Persist the lead + chosen slot BEFORE any GHL call (non-blocking).
@@ -310,6 +314,7 @@
             fbclid: (new URLSearchParams(location.search)).get('fbclid') || undefined,
             fbp: (document.cookie.match(/_fbp=([^;]+)/) || [])[1],
             fbc: (document.cookie.match(/_fbc=([^;]+)/) || [])[1],
+            eventId: eventId,
             test: TEST,
           }),
         });
@@ -354,9 +359,16 @@
         }).catch(function () {});
       } catch (_) {}
 
-      track("Lead", { content_name: SERVICE_NAME });
-      if (!TEST && bookingStatus === 'success') track("Schedule", { content_name: SERVICE_NAME });
-      if (!TEST && bookingStatus === 'success') trackDedicated("Schedule", { content_name: SERVICE_NAME });
+      // Tracking AFTER booking success; wrapped so a pixel/CAPI error can NEVER
+      // block or fail the booking. Dedicated Schedule carries eventId (== server
+      // CAPI event_id) for browser↔server dedup.
+      try {
+        track("Lead", { content_name: SERVICE_NAME });
+        if (!TEST && bookingStatus === 'success') track("Schedule", { content_name: SERVICE_NAME });
+        if (!TEST && bookingStatus === 'success') track("CompleteRegistration", { content_name: SERVICE_NAME });
+        if (!TEST && bookingStatus === 'success') trackDedicated("Schedule", { content_name: SERVICE_NAME }, eventId);
+        if (!TEST && bookingStatus === 'success') trackDedicated("CompleteRegistration", { content_name: SERVICE_NAME }, eventId);
+      } catch (_) { /* tracking must NEVER block or fail the booking */ }
 
       renderConfirmation({
         service: SERVICE_NAME,
